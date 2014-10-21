@@ -6,19 +6,18 @@ It is written in Clojure and Clojurescript. At the moment, everything is done in
 
 ### Getting Up & Running
 
-First, make sure that you have **Java** installed.
+1. First, make sure that you have **Java** installed.
 
-Then, install [Leiningen](https://github.com/technomancy/leiningen):
-
+2. Then, install [Leiningen](https://github.com/technomancy/leiningen):
 ```bash
 $ brew install leiningen
 ```
 
-Finally, start up the server:
+3. Finally, start up the server:
 
 ``` bash
 $ cd hackernews
 $ lein ring server-headless
 ```
 
-The website will be up on [localhost:3000](http://localhost:3000)
+The website will be up on [localhost:3000](http://localhost:3000).
