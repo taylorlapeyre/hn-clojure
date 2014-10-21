@@ -7,14 +7,11 @@ It is written in Clojure and Clojurescript. At the moment, everything is done in
 ### Getting Up & Running
 
 1. First, make sure that you have **Java** installed.
-
 2. Then, install [Leiningen](https://github.com/technomancy/leiningen):
 ```bash
 $ brew install leiningen
 ```
-
 3. Finally, start up the server:
-
 ``` bash
 $ cd hackernews
 $ lein ring server-headless
