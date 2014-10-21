@@ -8,5 +8,4 @@
     [:head
       [:title "Hello World"]
       (include-js "/js/main.js")]
-    [:body
-      [:h1 "Hello World"]]))
+    [:body]))
