@@ -5,7 +5,9 @@
                  [org.clojure/clojurescript "0.0-2371"]
                  [compojure "1.1.6"]
                  [hiccup "1.0.4"]
-                 [reagent "0.4.2"]]
+                 [reagent "0.4.2"]
+                 [clj-http "1.0.0"]
+                 [org.clojure/data.json "0.2.5"]]
   :plugins [[lein-cljsbuild "1.0.3"]
             [lein-ring "0.8.7"]]
   :profiles {:uberjar {:aot :all}}
