@@ -11,4 +11,4 @@
 (defn show
   "Shows a particular story and its comments."
   [story-id]
-  (show-views/page (api/get-story-with-comments story-id)))
+  (show-views/page (api/get-item-deep story-id)))

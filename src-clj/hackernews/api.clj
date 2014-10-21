@@ -25,18 +25,12 @@
   [item-id]
   (get-json (str base-url "/item/" item-id)))
 
-(defn get-story-comments
-  "Fetches the comments to a given story from the HN API.
+(defn get-item-deep
+  "Recursively fetches the story and all of its comments.
     WARNING: Very slow."
-  [story]
-  (map get-item (get story "kids")))
-
-(defn get-story-with-comments
-  "Fetches both the story info and each of its comments from the HN API.
-    Warning: Very slow."
-  [story-id]
-  (let [story (get-item story-id)]
-    (assoc story "comments" (get-story-comments story))))
+  [item-id]
+  (let [item (get-item item-id)]
+    (assoc item "comments" (map get-item-deep (item "kids")))))
 
 (defn get-front-page
   "Fetches each story on the front page of HN.

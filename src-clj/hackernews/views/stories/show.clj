@@ -9,14 +9,17 @@
     (util/link [:h2 (story "title")] (story "url"))
     [:h3 "By: " (story "by")]])
 
+(defn comment-html
+  [comment]
+  [:div {:class "comment"}
+    [:h4 (comment "by")]
+    [:p (comment "text")]
+    [:ul (map comment-html (comment "comments"))]])
+
 (defn comment-section
   "Shows each top level comment about the story."
   [comments]
-  (letfn [(comment-html [comment]
-            [:div {:class "comment"}
-              [:h4 (comment "by")]
-              [:p (comment "text")]])]
-    (map comment-html comments)))
+  (map comment-html comments))
 
 (defn page [story]
   (main-layout {:title (str "HN: " (story "title"))}
