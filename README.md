@@ -1,36 +1,5 @@
-# myapp
+## Hacker News
 
-FIXME: description
+This is an implementation of the website [Hacker News](http://news.ycombinator.com). It uses the official Hacker News [API](https://github.com/HackerNews/API).
 
-## Installation
-
-Download from http://example.com/FIXME.
-
-## Usage
-
-FIXME: explanation
-
-    $ java -jar myapp-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2014 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+It is written in Clojure and Clojurescript. At the moment, everything is done in Clojure. Right now, the front page is _super slow_ because I am getting each story synchronously. Once I write the logic to get stories in Clojurescript, it will be asynchronous and about 25x faster.

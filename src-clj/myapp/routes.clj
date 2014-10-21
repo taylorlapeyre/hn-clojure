@@ -12,7 +12,6 @@
   (GET "/" [] (index-views/page (hn/get-front-page)))
   (GET "/story/:id" [id]
     (story-views/page (hn/get-story-with-comments id)))
-  (route/resources "/")
   (route/not-found "Page not found."))
 
 (def app
