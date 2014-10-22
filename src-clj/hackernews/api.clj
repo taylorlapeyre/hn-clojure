@@ -30,17 +30,17 @@
     WARNING: Very slow."
   [item-id]
   (let [item (get-item item-id)]
-    (assoc item "comments" (map get-item-deep (item "kids")))))
+    (assoc item "comments" (pmap get-item-deep (item "kids")))))
 
 (defn get-front-page
   "Fetches each story on the front page of HN. Takes an optional
   number of stories to fetch. Default is 30.
     Warning: Very slow."
-  ([]      (map get-item (take 30 (get-front-page-story-ids))))
-  ([limit] (map get-item (take (Integer. limit) (get-front-page-story-ids)))))
+  ([]      (pmap get-item (take 30 (get-front-page-story-ids))))
+  ([limit] (pmap get-item (take (Integer. limit) (get-front-page-story-ids)))))
 
 (defn get-user
   "Given a username, fetches that user from the HN API."
   [username]
   (let [user (get-json (str base-url "/user/" username))]
-    (assoc user "stories" (map get-item (user "submitted")))))
+    (assoc user "stories" (pmap get-item (user "submitted")))))
