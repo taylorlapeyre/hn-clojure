@@ -4,7 +4,7 @@ This is an implementation of the website [Hacker News](http://news.ycombinator.c
 
 At the moment, everything is done in Clojure. I plan to add some Clojurescript for collapsing comments, etc.
 
-The website is _super slow_ because I am getting each story synchronously. Once I write the logic to get stories asynchronously, it will be exactly **100x faster.**
+The website is _super slow_ because I am waiting for every item to come back before rendering the page. This can be faster by rendering items on the front end as they come in via Reagent.
 
 ### Getting Up & Running
 
@@ -22,3 +22,12 @@ The website is _super slow_ because I am getting each story synchronously. Once 
   ```
 
 The website will be up on [localhost:3000](http://localhost:3000).
+
+### Compiling Clojurescript
+
+```bash
+$ cd hackernews
+$ lein cljsbuild once
+# or...
+$ lein cljsbuild auto
+```
