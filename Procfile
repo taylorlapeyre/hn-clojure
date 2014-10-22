@@ -1,1 +1,1 @@
-web: java $JVM_OPTS -cp target/hackernews.jar clojure.main -m hackernews.routes
+web: java $JVM_OPTS -cp target/hackernews.jar hackernews.routes

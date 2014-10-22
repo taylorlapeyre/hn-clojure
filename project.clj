@@ -1,5 +1,6 @@
 (defproject hackernews "0.1.0"
   :description "A Hacker News implementation."
+  :min-lein-version "2.0.0"
   :source-paths ["src-clj"]
   :dependencies [[org.clojure/clojure "1.6.0"]
                  ; Backend
