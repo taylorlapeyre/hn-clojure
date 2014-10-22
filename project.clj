@@ -8,7 +8,7 @@
                  [environ "0.5.0"]
                  [compojure "1.1.6"]
                  [clj-http "1.0.0"]
-                 [org.clojure/data.json "0.2.5"]
+                 [cheshire "5.3.1"]
                  [hiccup "1.0.4"]
                  ; Frontend
                  [org.clojure/clojurescript "0.0-2371"]

@@ -27,5 +27,6 @@
 (defn -main
   "This is the entry point into the application. It runs the server."
   [& [port]]
-  (let [port (Integer. (or port (env :port) 3000))]
-    (jetty/run-jetty (app) {:port (or (env :port) 3000) :join? false})))
+  (let [chosen-port (or port (env :port) "3000")
+        parse-int #(Integer/parseInt (re-find #"\A-?\d+" %))]
+    (jetty/run-jetty (app) {:port (parse-int chosen-port) :join? false})))

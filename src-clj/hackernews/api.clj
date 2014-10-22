@@ -1,6 +1,6 @@
 (ns hackernews.api
   (:require [clj-http.client :as client]
-            [clojure.data.json :as json]))
+            [cheshire.core :as json]))
 
 ;; The base URL for the HN API.
 (def base-url "https://hacker-news.firebaseio.com/v0")
@@ -12,7 +12,7 @@
   (->>
     (client/get (str url ".json"))
     (:body)
-    (json/read-str)))
+    (json/parse-string)))
 
 (defn get-front-page-story-ids
   "Fetches an array of IDs to stories on the front page of HN."
