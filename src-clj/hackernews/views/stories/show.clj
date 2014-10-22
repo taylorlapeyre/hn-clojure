@@ -7,7 +7,7 @@
   [story]
   [:header {:class "story-header"}
     (util/link [:h2 (story "title")] (story "url"))
-    (util/user-link [:h3 "By: " (story "by")] (story "by"))])
+    (util/user-link [:h3 "By " (story "by")] (story "by"))])
 
 (defn comment-html
   "Recursively generates the HTML comment tree for a given comment."
