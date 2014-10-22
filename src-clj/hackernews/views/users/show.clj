@@ -12,7 +12,7 @@
 (defn submitted-html
   [story]
   [:div {:class "submitted-story"}
-    (util/link [:h4 (story "title")] (story "url"))])
+    (util/story-link [:h4 (story "title")] (story "id"))])
 
 (defn submitted-section
   "Shows each story submitted by a user."

@@ -7,17 +7,18 @@
   [story]
   [:header {:class "story-header"}
     (util/link [:h2 (story "title")] (story "url"))
-    (util/link [:h3 "By: " (story "by")] (str "/users/" (story "by")))])
+    (util/user-link [:h3 "By: " (story "by")] (story "by"))])
 
 (defn comment-html
+  "Recursively generates the HTML comment tree for a given comment."
   [comment]
   [:div {:class "comment"}
-    (util/link [:h4 (comment "by")] (str "/users/" (comment "by")))
+    (util/user-link [:h4 (comment "by")] (comment "by"))
     [:p (comment "text")]
     [:ul (map comment-html (comment "comments"))]])
 
 (defn comment-section
-  "Shows each top level comment about the story."
+  "Shows the nested comments on the story."
   [comments]
   (map comment-html comments))
 

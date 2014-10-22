@@ -9,10 +9,9 @@
     (util/link (story "title") (story "url"))
     [:p
       (story "score") " points by "
-      (util/link (story "by") (str "/users/" (story "by"))) " | "
-      (util/link
-        (str (count (story "kids")) " comments")
-        (str "/stories/" (story "id")))]])
+      (util/user-link (story "by") (story "by")) " | "
+      (util/story-link
+        (str (count (story "kids")) " comments") (story "id"))]])
 
 (defn page [stories]
   (main-layout {:title "Hacker News"}
