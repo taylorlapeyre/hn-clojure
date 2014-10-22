@@ -26,21 +26,20 @@
   (get-json (str base-url "/item/" item-id)))
 
 (defn get-item-deep
-  "Recursively fetches the story and all of its comments.
-    WARNING: Very slow."
+  "Recursively fetches the story and all of its comments."
   [item-id]
   (let [item (get-item item-id)]
     (assoc item "comments" (pmap get-item-deep (item "kids")))))
 
 (defn get-front-page
   "Fetches each story on the front page of HN. Takes an optional
-  number of stories to fetch. Default is 30.
-    Warning: Very slow."
+  number of stories to fetch. Default is 30."
   ([]      (pmap get-item (take 30 (get-front-page-story-ids))))
   ([limit] (pmap get-item (take (Integer. limit) (get-front-page-story-ids)))))
 
 (defn get-user
-  "Given a username, fetches that user from the HN API."
+  "Given a username, fetches that user from the HN API along with all of their
+  submitted stories."
   [username]
   (let [user (get-json (str base-url "/user/" username))]
     (assoc user "stories" (pmap get-item (user "submitted")))))
