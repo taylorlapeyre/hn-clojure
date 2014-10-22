@@ -6,11 +6,13 @@
             [compojure.response        :as response]
             [ring.adapter.jetty        :as jetty]
             [environ.core              :refer [env]]
-            [hackernews.controllers.stories :as stories]))
+            [hackernews.controllers.stories :as stories]
+            [hackernews.controllers.users   :as users]))
 
 (defroutes main-routes
   (GET "/" [limit] (stories/index limit))
   (GET "/stories/:id" [id] (stories/show id))
+  (GET "/users/:username" [username] (users/show username))
 
   (route/resources "/")
   (route/not-found "Page not found."))

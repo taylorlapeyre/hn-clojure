@@ -7,12 +7,12 @@
   [story]
   [:header {:class "story-header"}
     (util/link [:h2 (story "title")] (story "url"))
-    [:h3 "By: " (story "by")]])
+    (util/link [:h3 "By: " (story "by")] (str "/users/" (story "by")))])
 
 (defn comment-html
   [comment]
   [:div {:class "comment"}
-    [:h4 (comment "by")]
+    (util/link [:h4 (comment "by")] (str "/users/" (comment "by")))
     [:p (comment "text")]
     [:ul (map comment-html (comment "comments"))]])
 

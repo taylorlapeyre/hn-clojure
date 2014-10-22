@@ -8,7 +8,8 @@
   [:li {:class "story"}
     (util/link (story "title") (story "url"))
     [:p
-      (story "score") " points by " (story "by") " | "
+      (story "score") " points by "
+      (util/link (story "by") (str "/users/" (story "by"))) " | "
       (util/link
         (str (count (story "kids")) " comments")
         (str "/stories/" (story "id")))]])
