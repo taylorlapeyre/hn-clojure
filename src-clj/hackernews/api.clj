@@ -33,7 +33,8 @@
     (assoc item "comments" (map get-item-deep (item "kids")))))
 
 (defn get-front-page
-  "Fetches each story on the front page of HN.
+  "Fetches each story on the front page of HN. Takes an optional
+  number of stories to fetch. Default is 50.
     Warning: Very slow."
-  []
-  (map get-item (get-front-page-story-ids)))
+  ([]      (map get-item (take 50 (get-front-page-story-ids))))
+  ([limit] (map get-item (take limit (get-front-page-story-ids)))))

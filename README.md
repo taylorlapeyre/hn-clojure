@@ -18,7 +18,7 @@ The website is _super slow_ because I am getting each story synchronously. Once 
 3. Finally, start up the server:
   ``` bash
   $ cd hackernews
-  $ lein ring server-headless
+  $ lein run
   ```
 
 The website will be up on [localhost:3000](http://localhost:3000).
