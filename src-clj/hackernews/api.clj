@@ -37,4 +37,4 @@
   number of stories to fetch. Default is 50.
     Warning: Very slow."
   ([]      (map get-item (take 50 (get-front-page-story-ids))))
-  ([limit] (map get-item (take limit (get-front-page-story-ids)))))
+  ([limit] (map get-item (take (Integer. limit) (get-front-page-story-ids)))))

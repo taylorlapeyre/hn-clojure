@@ -9,7 +9,7 @@
             [hackernews.controllers.stories :as stories]))
 
 (defroutes main-routes
-  (GET "/" [] (stories/index))
+  (GET "/" [limit] (stories/index limit))
   (GET "/stories/:id" [id] (stories/show id))
 
   (route/resources "/")

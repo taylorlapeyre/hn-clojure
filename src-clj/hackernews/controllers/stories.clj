@@ -5,8 +5,10 @@
 
 (defn index
   "Shows all stories on the front page of Hacker News."
-  []
-  (index-views/page (api/get-front-page)))
+  [limit]
+  (if (nil? limit)
+    (index-views/page (api/get-front-page))
+    (index-views/page (api/get-front-page limit))))
 
 (defn show
   "Shows a particular story and its comments."
