@@ -4,7 +4,7 @@ This is an implementation of the website [Hacker News](http://news.ycombinator.c
 
 At the moment, everything is done in Clojure. I plan to add some Clojurescript for collapsing comments, etc.
 
-The website is _super slow_ because I am waiting for every item to come back before rendering the page. This can be faster by rendering items on the front end as they come in via Reagent.
+The website is a little slow because I am waiting for every item to come back before rendering the page. This can be faster by rendering items on the front end as they come in via Reagent.
 
 ### Getting Up & Running
 
