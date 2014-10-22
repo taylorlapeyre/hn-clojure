@@ -1,3 +1,37 @@
+:root {
+  font-family: 'Verdana';
+  font-size: 13px;
+}
+
+body {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.main-header {
+  height: 25px;
+  font-size: 13px;
+  margin-top: 10px;
+  white-space: nowrap;
+}
+
+.main-header h1 {
+  font-size: 13px;
+  display: inline;
+  padding: 0 10px;
+}
+
+.main-header img {
+  position: relative;
+  top: 4px;
+}
+
+.story p {
+  font-size: 9px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
 .comment {
   border: 1px solid #eee;
   margin: 5px 0;
