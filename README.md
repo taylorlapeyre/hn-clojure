@@ -7,6 +7,7 @@ This is an implementation of the website [Hacker News](http://news.ycombinator.c
 ### Features
 - Look at front page stories
 - View nested comments for each story
+- See a user's submitted stories
 - That's about it.
 
 ### How is it done?
