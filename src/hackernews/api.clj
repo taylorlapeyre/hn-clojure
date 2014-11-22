@@ -8,7 +8,6 @@
 (defn get-json
   "Given a URL, parses the body of the HTTP GET request as JSON."
   [url]
-  (println "GET " url)
   (->>
     (client/get (str url ".json"))
     (:body)

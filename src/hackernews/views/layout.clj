@@ -30,12 +30,11 @@
   "The main chrome of the website. Accepts a map that contains information
   about the page, and whatever html is to get rendered into the layout."
   [{:keys [title]} & page-content]
-  (html5
+  [:html
     [:head
       [:title title]
-      (include-js "/js/main.js")
-      (include-css "/css/main.css")]
+      [:link {:href "/css/main.css" :rel "stylesheet"}]]
     [:body
       (main-header)
       (github-banner)
-      [:div {:class "content"} page-content]]))
+      (concat [:div {:class "content"}] page-content)]])

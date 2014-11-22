@@ -15,14 +15,9 @@
   [:div {:class "comment"}
     (util/user-link [:h4 (comment "by")] (comment "by"))
     [:p (comment "text")]
-    [:ul (map comment-html (comment "comments"))]])
-
-(defn comment-section
-  "Shows the nested comments on the story."
-  [comments]
-  (map comment-html comments))
+    (cons :ul (map comment-html (comment "comments")))])
 
 (defn page [story]
   (main-layout {:title (str "HN: " (story "title"))}
-    (story-header story)
-    (comment-section (story "comments"))))
+    (cons (story-header story)
+          (map comment-html (story "comments")))))

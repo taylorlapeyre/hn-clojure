@@ -15,4 +15,4 @@
 
 (defn page [stories]
   (main-layout {:title "Hacker News"}
-    [:ol (map story-html stories)]))
+    (concat [:ol] (map story-html stories))))
