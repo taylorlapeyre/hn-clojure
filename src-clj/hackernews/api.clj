@@ -9,10 +9,10 @@
   "Given a URL, parses the body of the HTTP GET request as JSON."
   [url]
   (println "GET " url)
-  (->>
-    (client/get (str url ".json"))
-    (:body)
-    (json/parse-string)))
+  (->> (str url ".json")
+       (client/get )
+       (:body)
+       (json/parse-string)))
 
 (defn get-front-page-story-ids
   "Fetches an array of IDs to stories on the front page of HN."
